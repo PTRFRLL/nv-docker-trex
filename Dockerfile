@@ -4,7 +4,7 @@ ENV NVIDIA_DRIVER_CAPABILITIES="compute,video,utility"
 
 ENV WALLET=0x4208E04E6cAC8f496596fbfAFdF140382275C495
 ENV SERVER=stratum+ssl://us2.ethermine.org:5555
-ENV WORKER=VAULT
+ENV WORKER=Rig
 ENV ALGO=ethash
 
 ENV TREX_URL="https://github.com/trexminer/T-Rex/releases/download/0.19.9/t-rex-0.19.9-linux-cuda10.0.tar.gz"

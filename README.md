@@ -17,25 +17,26 @@ Currently uses [T-Rex Miner](https://github.com/trexminer/T-Rex) for mining.
 
 ### Unraid
 
-//TODO
+Add a Docker container in the WebUI, the repository should be `ptrfrll/nv-docker-trex`:
 
-### Docker
+![unraid webui](examples/unraid.png)
 
-Run the docker and supply the following variables:
+**IMPORTANT**: Be sure to add `--runtime=nvidia` in the Extra Parameters box (you have to enable Advanced View in the WebUI)
 
-**NOTE: IF YOU DO NOT SUPPLY THESE VARIABLES, THEY WILL DEFAULT TO MY WALLET...🤷‍♂️**
 
-```
-WALLET - your ETH wallet address
-WORKER - name of worker
-SERVER - url of mining pool (e.g. stratum+ssl://us2.ethermine.org:5555)
-ALGO - supply if using something other than 'ethash'
-```
+![unraid webui](examples/extraParams.png)
 
-Expose port 4067 so you can access the Trex WebUI
+Add Docker env variables to set your miner options
 
-Example
+**NOTE**: If you don't change the default wallet, you'll be mining for me... :grin:
 
-```sh
-docker run -d --name='eth-miner' -p '4067:4067/tcp' -e 'WALLET'='ETH_WALLET_ADDRESS' -e 'SERVER'='stratum+ssl://us2.ethermine.org:5555' -e 'WORKER'='Rig' --runtime=nvidia 'ptrfrll/ethminer'
-```
+| Variable | Value                   | Default                              |
+|----------|-------------------------|--------------------------------------|
+| WALLET   | Your wallet address     | My ETH wallet                        |
+| SERVER   | Mining pool URL         | stratum+ssl://us2.ethermine.org:5555 |
+| WORKER   | Worker name             | Rig                                  |
+| ALGO     | t-rex algorithm to mine | ethash                               |
+
+### WebUI
+
+(Optional) You can also add port 4067 to access T-rex's WebUI
