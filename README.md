@@ -1,5 +1,7 @@
 # T-Rex Miner Nvidia Docker
 
+![Publish Docker image](https://github.com/PTRFRLL/nv-docker-trex/workflows/Publish%20Docker%20image/badge.svg)
+
 > Mine ethash (and others) on docker/nvidia-docker
 
 ## About
