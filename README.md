@@ -39,4 +39,15 @@ Add Docker env variables to set your miner options
 
 ### WebUI
 
-(Optional) You can also add port 4067 to access T-rex's WebUI
+(Optional) You can expose port 4067 to access T-rex's WebUI
+
+![unraid webui](examples/webui.png)
+
+Under Advanced View, you can set the WebUI to 
+```
+http://[IP]:[PORT:4067]/trex
+```
+
+which, adds the WebUI link in the Unraid UI.
+
+![unraid webui](examples/set-webui.png)
