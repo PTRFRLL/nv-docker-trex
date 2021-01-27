@@ -19,16 +19,13 @@ Currently uses [T-Rex Miner](https://github.com/trexminer/T-Rex) for mining.
 
 ### Unraid
 
-Add a Docker container in the WebUI, the repository should be `ptrfrll/nv-docker-trex`:
+Search for `trex miner` on the Community Applications page:
 
-![unraid webui](examples/unraid.png)
+![community apps](examples/ca.png)
 
-**IMPORTANT**: Be sure to add `--runtime=nvidia` in the Extra Parameters box (you have to enable Advanced View in the WebUI)
+### Docker
 
-
-![unraid webui](examples/extraParams.png)
-
-Add Docker env variables to set your miner options
+Simply pull and run docker and add the needed variables:
 
 **NOTE**: If you don't change the default wallet, you'll be mining for me... :grin:
 
@@ -39,17 +36,8 @@ Add Docker env variables to set your miner options
 | WORKER   | Worker name             | Rig                                  |
 | ALGO     | t-rex algorithm to mine | ethash                               |
 
-### WebUI
+**Example**:
 
-(Optional) You can expose port 4067 to access T-rex's WebUI
-
-![unraid webui](examples/webui.png)
-
-Under Advanced View, you can set the WebUI to 
 ```
-http://[IP]:[PORT:4067]/trex
+docker run -d --name='trex-miner' -e WALLET=0xYOUR_ETH_WALLET_ADDRESS -e SERVER=stratum+ssl://us2.ethermine.org:5555 -e WORKER=Rig -e ALGO=ethash  -p '4067:4067/tcp' --runtime=nvidia ptrfrll/nv-docker-trex
 ```
-
-which, adds the WebUI link in the Unraid UI.
-
-![unraid webui](examples/set-webui.png)
