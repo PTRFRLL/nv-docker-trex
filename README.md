@@ -36,8 +36,16 @@ Simply pull and run docker and add the needed variables:
 | WORKER   | Worker name             | Rig                                  |
 | ALGO     | t-rex algorithm to mine | ethash                               |
 
+If you want to use the config file, map the `/config` path as well
+
 **Example**:
 
 ```
 docker run -d --name='trex-miner' -e WALLET=0xYOUR_ETH_WALLET_ADDRESS -e SERVER=stratum+ssl://us2.ethermine.org:5555 -e WORKER=Rig -e ALGO=ethash  -p '4067:4067/tcp' --runtime=nvidia ptrfrll/nv-docker-trex
+```
+
+**With Config File**:
+
+```
+docker run -d --name='trex-miner' -e WALLET=0xYOUR_ETH_WALLET_ADDRESS -e SERVER=stratum+ssl://us2.ethermine.org:5555 -e WORKER=Rig -e ALGO=ethash  -p '4067:4067/tcp' -v '/path/to/config/':'/config':rw --runtime=nvidia ptrfrll/nv-docker-trex
 ```
