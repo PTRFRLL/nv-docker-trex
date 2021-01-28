@@ -9,6 +9,8 @@ ENV ALGO=ethash
 
 ENV TREX_URL="https://github.com/trexminer/T-Rex/releases/download/0.19.9/t-rex-0.19.9-linux-cuda10.0.tar.gz"
 
+ADD config/config.json /home/nobody/
+
 RUN apt-get update && apt-get install -y --no-install-recommends \
     wget \
  && rm -rf /var/lib/apt/lists/* \
@@ -19,6 +21,8 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
 
 WORKDIR /trex
 
+ADD init.sh /trex/
+
 VOLUME ["/config"]
 
-ENTRYPOINT ./t-rex -c /config/config.txt -a $ALGO -o $SERVER -u $WALLET -p x -w $WORKER 
+CMD ["/bin/bash", "init.sh"]
