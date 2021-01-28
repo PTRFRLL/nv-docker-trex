@@ -19,4 +19,6 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
 
 WORKDIR /trex
 
-ENTRYPOINT ./t-rex -a $ALGO -o $SERVER -u $WALLET -p x -w $WORKER
+VOLUME ["/config"]
+
+ENTRYPOINT ./t-rex -c /config/config.txt -a $ALGO -o $SERVER -u $WALLET -p x -w $WORKER 
