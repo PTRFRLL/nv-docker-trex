@@ -5,7 +5,7 @@
       "pass" : "x",
       "url" : "stratum+ssl://us2.ethermine.org:5555",
       "user" : "0x4208E04E6cAC8f496596fbfAFdF140382275C495",
-      "worker" : "VAULT"
+      "worker" : "Rig"
     }
   ],
   "api-bind-http" : "0.0.0.0:4067"
