@@ -19,5 +19,14 @@ jobs:
         uses: docker/build-push-action@v2
         with:
           push: true
+          file: Dockerfile
           tags: |
             ptrfrll/nv-docker-trex:latest
+            ptrfrll/nv-docker-trex:cuda10
+      - name: Push and Build
+        uses: docker/build-push-action@v2
+        with:
+          push: true
+          file: Dockerfile.cuda11
+          tags: |
+            ptrfrll/nv-docker-trex:cuda11
