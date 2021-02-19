@@ -23,6 +23,19 @@ Search for `trex miner` on the Community Applications page:
 
 ![community apps](examples/ca.png)
 
+Run `nvidia-smi` on Unraid console to determine CUDA version:
+
+![cuda version](examples/cuda.png)
+
+**If using CUDA 11+, update the repository to use cuda11 tag:**
+
+```
+ptrfrll/nv-docker-trex:cuda11
+```
+
+![repo](examples/repo.png)
+
+
 ### Docker
 
 Simply pull and run docker and add the needed variables:
