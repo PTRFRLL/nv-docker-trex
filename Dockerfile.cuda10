@@ -1,4 +1,4 @@
-FROM nvidia/cuda:11.1.1-base
+FROM nvidia/cuda:10.2-base
 
 ENV NVIDIA_DRIVER_CAPABILITIES="compute,video,utility"
 
@@ -7,7 +7,7 @@ ENV SERVER=stratum+ssl://us2.ethermine.org:5555
 ENV WORKER=Rig
 ENV ALGO=ethash
 
-ENV TREX_URL="https://github.com/trexminer/T-Rex/releases/download/0.19.11/t-rex-0.19.11-linux-cuda11.1.tar.gz"
+ENV TREX_URL="https://github.com/trexminer/T-Rex/releases/download/0.19.11/t-rex-0.19.11-linux-cuda10.0.tar.gz"
 
 ADD config/config.json /home/nobody/
 

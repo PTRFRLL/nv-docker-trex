@@ -22,11 +22,11 @@ jobs:
           file: Dockerfile
           tags: |
             ptrfrll/nv-docker-trex:latest
-            ptrfrll/nv-docker-trex:cuda10
+            ptrfrll/nv-docker-trex:cuda11
       - name: Push and Build
         uses: docker/build-push-action@v2
         with:
           push: true
-          file: Dockerfile.cuda11
+          file: Dockerfile.cuda10
           tags: |
-            ptrfrll/nv-docker-trex:cuda11
+            ptrfrll/nv-docker-trex:cuda10
