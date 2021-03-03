@@ -27,14 +27,11 @@ Run `nvidia-smi` on Unraid console to determine CUDA version:
 
 ![cuda version](examples/cuda.png)
 
-**If using CUDA 11+, update the repository to use cuda11 tag:**
+**If using CUDA 10, use the cuda10 tag:**
 
 ```
-ptrfrll/nv-docker-trex:cuda11
+ptrfrll/nv-docker-trex:cuda10
 ```
-
-![repo](examples/repo.png)
-
 
 ### Docker
 
@@ -62,3 +59,7 @@ docker run -d --name='trex-miner' -e WALLET=0xYOUR_ETH_WALLET_ADDRESS -e SERVER=
 ```
 docker run -d --name='trex-miner' -e WALLET=0xYOUR_ETH_WALLET_ADDRESS -e SERVER=stratum+ssl://us2.ethermine.org:5555 -e WORKER=Rig -e ALGO=ethash  -p '4067:4067/tcp' -v '/path/to/config/':'/config':rw --runtime=nvidia ptrfrll/nv-docker-trex
 ```
+
+### Donate
+
+[![Donate with Ethereum](https://en.cryptobadges.io/badge/big/0x4208E04E6cAC8f496596fbfAFdF140382275C495)](https://en.cryptobadges.io/donate/0x4208E04E6cAC8f496596fbfAFdF140382275C495)
