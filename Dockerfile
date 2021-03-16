@@ -7,7 +7,7 @@ ENV SERVER=stratum+ssl://us2.ethermine.org:5555
 ENV WORKER=Rig
 ENV ALGO=ethash
 
-ENV TREX_URL="https://github.com/trexminer/T-Rex/releases/download/0.19.11/t-rex-0.19.11-linux-cuda11.1.tar.gz"
+ENV TREX_URL="https://github.com/trexminer/T-Rex/releases/download/0.19.12/t-rex-0.19.12-linux-cuda11.1.tar.gz"
 
 ADD config/config.json /home/nobody/
 
