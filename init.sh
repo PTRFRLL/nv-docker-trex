@@ -10,7 +10,9 @@ echo Server: $SERVER
 echo Algorithm: $ALGO
 echo Wallet: $WALLET
 echo Worker: $WORKER
-echo Extra args: $EXTRA_ARGS
+if [ ! -z "$EXTRA_ARGS" ]; then
+	echo Extra arguments: $EXTRA_ARGS
+fi
 echo ============================================================
 
 
