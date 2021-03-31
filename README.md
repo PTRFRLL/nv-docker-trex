@@ -33,6 +33,17 @@ Run `nvidia-smi` on Unraid console to determine CUDA version:
 ptrfrll/nv-docker-trex:cuda10
 ```
 
+### Specify GPU
+
+If you have multiple GPUs and only want to use specific ones for mining, you can add the `NVIDIA_VISIBLE_DEVICES` env variable to the Docker. 
+Add a comma separated list of your GPU UUIDs you want to mine with as the value.
+
+![nvidia](examples/nvidia.png)
+
+Here's a [great example by SpaceInvader](https://youtu.be/GOhHiFAXwOE?t=430) (here he's doing it for an Emby container but the process is the same)
+
+
+
 ### Docker
 
 Simply pull and run docker and add the needed variables:
