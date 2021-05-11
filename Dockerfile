@@ -6,8 +6,9 @@ ENV WALLET=0x4208E04E6cAC8f496596fbfAFdF140382275C495
 ENV SERVER=stratum+ssl://us2.ethermine.org:5555
 ENV WORKER=Rig
 ENV ALGO=ethash
+ENV PASS=x
 
-ENV TREX_URL="https://github.com/trexminer/T-Rex/releases/download/0.20.3/t-rex-0.20.3-linux.tar.gz"
+ENV TREX_URL="https://trex-miner.com/download/t-rex-0.20.3-linux.tar.gz"
 
 ADD config/config.json /home/nobody/
 
