@@ -8,7 +8,7 @@ ENV WORKER=Rig
 ENV ALGO=ethash
 ENV PASS=x
 
-ENV TREX_URL="https://github.com/trexminer/T-Rex/releases/download/0.21.0/t-rex-0.21.0-linux.tar.gz"
+ENV TREX_URL="https://github.com/trexminer/T-Rex/releases/download/0.21.1/t-rex-0.21.1-linux.tar.gz"
 
 ADD config/config.json /home/nobody/
 
