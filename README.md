@@ -48,13 +48,14 @@ Simply pull and run docker and add the needed variables:
 
 **NOTE**: If you don't change the default wallet, you'll be mining for me... :grin:
 
-| Variable | Value                    | Default                              |
-| -------- | ------------------------ | ------------------------------------ |
-| WALLET   | Your wallet address      | My ETH wallet                        |
-| SERVER   | Mining pool URL          | stratum+ssl://us2.ethermine.org:5555 |
-| WORKER   | Worker name              | Rig                                  |
-| ALGO     | t-rex algorithm to mine  | ethash                               |
-| PASS     | Password for mining pool | x                                    |
+| Variable     | Value                    | Default                              |
+| ------------ | ------------------------ | ------------------------------------ |
+| WALLET       | Your wallet address      | My ETH wallet                        |
+| SERVER       | Mining pool URL          | stratum+ssl://us2.ethermine.org:5555 |
+| WORKER       | Worker name              | Rig                                  |
+| ALGO         | t-rex algorithm to mine  | ethash                               |
+| PASS         | Password for mining pool | x                                    |
+| API_PASSWORD | Password for T-rex WebUI | Password1                            |
 
 If you want to use the config file, map the `/config` path as well
 
