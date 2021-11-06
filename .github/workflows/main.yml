@@ -19,10 +19,6 @@ jobs:
             type=ref,event=tag
           flavor: |
             latest=true
-            prefix=cuda11-
-      - name: Show tags
-        run: |
-          echo ${{ steps.meta.outputs.tags }}
       - name: Login to Dockerhub
         uses: docker/login-action@v1
         with:
@@ -33,9 +29,7 @@ jobs:
         with:
           push: true
           file: Dockerfile
-          tags: |
-            ptrfrll/nv-docker-trex:latest
-            ptrfrll/nv-docker-trex:cuda11
+          tags: ${{ steps.meta.outputs.tags }}
   cuda-10:
     name: Push CUDA 10 image to Dockerhub
     runs-on: ubuntu-latest
@@ -53,9 +47,6 @@ jobs:
           flavor: |
             latest=false
             prefix=cuda10-
-      - name: Show tags
-        run: |
-          echo ${{ steps.meta.outputs.tags }}
       - name: Login to Dockerhub
         uses: docker/login-action@v1
         with:
@@ -66,5 +57,4 @@ jobs:
         with:
           push: true
           file: Dockerfile.cuda10
-          tags: |
-            ptrfrll/nv-docker-trex:cuda10
+          tags: ${{ steps.meta.outputs.tags }}
