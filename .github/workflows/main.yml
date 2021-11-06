@@ -4,7 +4,7 @@ on:
     types: [published]
 jobs:
   cuda-11:
-    name: Push Push CUDA 11 image to Dockerhub
+    name: Push CUDA 11 image to Dockerhub
     runs-on: ubuntu-latest
     steps:
       - name: Check out the repo
@@ -16,7 +16,7 @@ jobs:
         with:
           images: ptrfrll/nv-docker-trex
           tags: |
-            type=semver,pattern={{raw}}
+            type=ref,event=tag
           flavor: |
             latest=true
             prefix=cuda11-
@@ -49,7 +49,7 @@ jobs:
         with:
           images: ptrfrll/nv-docker-trex
           tags: |
-            type=semver,pattern={{raw}}
+            type=ref,event=tag
           flavor: |
             latest=false
             prefix=cuda10-
