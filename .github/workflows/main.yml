@@ -30,7 +30,7 @@ jobs:
         with:
           push: true
           file: Dockerfile
-          tags: test
+          tags: ghcr
   cuda-10:
     name: Push CUDA 10 image to GHCR
     runs-on: ubuntu-latest
