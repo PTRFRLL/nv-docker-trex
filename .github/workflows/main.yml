@@ -16,7 +16,7 @@ jobs:
         id: meta
         uses: docker/metadata-action@v3
         with:
-          images: ghcr.io/ptrfrll/nv-docker-trex
+          images: ptrfrll/nv-docker-trex,ghcr.io/ptrfrll/nv-docker-trex
           tags: |
             type=ref,event=tag
           flavor: |
@@ -44,7 +44,7 @@ jobs:
         id: meta
         uses: docker/metadata-action@v3
         with:
-          images: ghcr.io/ptrfrll/nv-docker-trex
+          images: ptrfrll/nv-docker-trex,ghcr.io/ptrfrll/nv-docker-trex
           tags: |
             type=ref,event=tag
             type=raw,value=latest
