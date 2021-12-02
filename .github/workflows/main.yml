@@ -1,10 +1,10 @@
 name: Publish Docker image
 on:
-  release:
-    types: [published]
+  push:
+    branches: ghcr
 jobs:
   cuda-11:
-    name: Push CUDA 11 image to Dockerhub
+    name: Push CUDA 11 image to GHCR
     runs-on: ubuntu-latest
     steps:
       - name: Check out the repo
@@ -14,16 +14,17 @@ jobs:
         id: meta
         uses: docker/metadata-action@v3
         with:
-          images: ptrfrll/nv-docker-trex
+          images: ghcr.io/ptrfrll/nv-docker-trex
           tags: |
             type=ref,event=tag
           flavor: |
             latest=true
-      - name: Login to Dockerhub
+      - name: Login to GHCR
         uses: docker/login-action@v1
         with:
-          username: ${{ secrets.DOCKERHUB_USERNAME}}
-          password: ${{ secrets.DOCKERHUB_TOKEN }}
+          registry: ghcr.io
+          username: ${{ github.actor }}
+          password: ${{ secrets.GITHUB_TOKEN }}
       - name: Push and Build
         uses: docker/build-push-action@v2
         with:
@@ -31,7 +32,7 @@ jobs:
           file: Dockerfile
           tags: ${{ steps.meta.outputs.tags }}
   cuda-10:
-    name: Push CUDA 10 image to Dockerhub
+    name: Push CUDA 10 image to GHCR
     runs-on: ubuntu-latest
     steps:
       - name: Check out the repo
@@ -41,18 +42,19 @@ jobs:
         id: meta
         uses: docker/metadata-action@v3
         with:
-          images: ptrfrll/nv-docker-trex
+          images: ghcr.io/ptrfrll/nv-docker-trex
           tags: |
             type=ref,event=tag
             type=raw,value=latest
           flavor: |
             latest=false
             prefix=cuda10-
-      - name: Login to Dockerhub
+      - name: Login to GHCR
         uses: docker/login-action@v1
         with:
-          username: ${{ secrets.DOCKERHUB_USERNAME}}
-          password: ${{ secrets.DOCKERHUB_TOKEN }}
+          registry: ghcr.io
+          username: ${{ github.actor }}
+          password: ${{ secrets.GITHUB_TOKEN }}
       - name: Push and Build
         uses: docker/build-push-action@v2
         with:
