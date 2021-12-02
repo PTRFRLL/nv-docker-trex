@@ -1,7 +1,9 @@
 name: Publish Docker image
 on:
+  release:
+    types: [published]
   push:
-    branches: ghcr
+    branches: gh-actions
 jobs:
   cuda-11:
     name: Push CUDA 11 image to GHCR
@@ -30,7 +32,7 @@ jobs:
         with:
           push: true
           file: Dockerfile
-          tags: ghcr.io/ptrfrll/nv-docker-trex:test
+          tags: ${{ steps.meta.outputs.tags }}
   cuda-10:
     name: Push CUDA 10 image to GHCR
     runs-on: ubuntu-latest
