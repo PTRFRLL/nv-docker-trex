@@ -1,4 +1,4 @@
-FROM nvidia/cuda:10.2-base
+FROM --platform=linux/amd64 nvidia/cuda:10.2-base-ubuntu18.04
 
 ENV NVIDIA_DRIVER_CAPABILITIES="compute,video,utility"
 
