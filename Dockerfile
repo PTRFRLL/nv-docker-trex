@@ -9,7 +9,7 @@ ENV ALGO=ethash
 ENV PASS=x
 ENV API_PASSWORD=Password1
 
-ENV TREX_URL="https://trex-miner.com/download/t-rex-0.26.1-linux.tar.gz"
+ENV TREX_URL="https://github.com/trexminer/T-Rex/releases/download/0.26.4/t-rex-0.26.4-linux.tar.gz"
 
 ADD config/config.json /home/nobody/
 
