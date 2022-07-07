@@ -16,4 +16,4 @@ echo Pass: $PASS
 echo ============================================================
 
 
-./t-rex -c /config/config.json -a $ALGO -o $SERVER -u $WALLET -p $PASS -w $WORKER
+./t-rex -c /config/config.json -a $ALGO -o $SERVER -u $WALLET -p $PASS -w $WORKER $EXTRA
