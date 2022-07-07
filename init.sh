@@ -13,7 +13,8 @@ echo Algorithm: $ALGO
 echo Wallet: $WALLET
 echo Worker: $WORKER
 echo Pass: $PASS
+echo Extra: $EXTRA
 echo ============================================================
 
 
-./t-rex -c /config/config.json -a $ALGO -o $SERVER -u $WALLET -p $PASS -w $WORKER
+./t-rex -c /config/config.json -a $ALGO -o $SERVER -u $WALLET -p $PASS -w $WORKER $EXTRA
