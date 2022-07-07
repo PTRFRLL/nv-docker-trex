@@ -13,6 +13,7 @@ echo Algorithm: $ALGO
 echo Wallet: $WALLET
 echo Worker: $WORKER
 echo Pass: $PASS
+echo Extra: $EXTRA
 echo ============================================================
 
 
